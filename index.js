@@ -5,6 +5,8 @@ const util = require('util');
 
 const generateMarkdown = require('./utils/generateMarkdown.js')
 
+const generateReadme = require("./utils/generateReadme")
+
 // TODO: Create an array of questions for user input
 const questions = [{
     type: "input",
@@ -45,7 +47,7 @@ const questions = [{
     type: "list",
     message: "Which licence is being used?",
     name: "License",
-    choices: ['email','phone','text']
+    choices: ['MIT License', 'Mozilla Public License 2.0', 'Apache License 2.0', 'Boost Software License 1.0',]
 },
 {
     type: "input",
@@ -61,11 +63,20 @@ const questions = [{
     type: "input",
     message: "Contact info for inquires?",
     name: "Questions",
-    choices: ['email','github']
 },];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+const writeFileAsync = util.promisify(fs.writeFile);
+
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, err => {
+        if (err) {
+          return console.log(err);
+        }
+      
+        console.log("Success! Your README.md file has been generated")
+    });
+}
 
 // TODO: Create a function to initialize app
 async function init() {
