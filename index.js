@@ -1,13 +1,11 @@
-// TODO: Include packages needed for this application
+// Packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
 const util = require('util');
 
 const generateMarkdown = require('./utils/generateMarkdown.js')
 
-const generateReadme = require("./utils/generateReadme")
-
-// TODO: Create an array of questions for user input
+// Questions for user input
 const questions = [{
     type: "input",
     message: "What is the name of this project?",
@@ -47,7 +45,7 @@ const questions = [{
     type: "list",
     message: "Which licence is being used?",
     name: "License",
-    choices: ['MIT License', 'Mozilla Public License 2.0', 'Apache License 2.0', 'Boost Software License 1.0',]
+    choices: ['MIT License', 'Mozilla Public License 2.0', 'Apache License 2.0', 'Boost Software License 1.0', 'None']
 },
 {
     type: "input",
@@ -65,7 +63,7 @@ const questions = [{
     name: "Questions",
 },];
 
-// TODO: Create a function to write README file
+// Function to write README file
 const writeFileAsync = util.promisify(fs.writeFile);
 
 function writeToFile(fileName, data) {
@@ -78,7 +76,7 @@ function writeToFile(fileName, data) {
     });
 }
 
-// TODO: Create a function to initialize app
+// Function to initialize app
 async function init() {
     try {
 
@@ -89,7 +87,7 @@ async function init() {
 
     // Pass Inquirer userResponses and GitHub userInfo to generateMarkdown
     console.log("Generating your README next...")
-    const markdown = generateMarkdown(userResponses, userInfo);
+    const markdown = generateMarkdown(userResponses);
     console.log(markdown);
 
     // Write markdown to file
