@@ -9,58 +9,53 @@ const generateMarkdown = require('./utils/generateMarkdown.js')
 const questions = [{
     type: "input",
     message: "What is the name of this project?",
-    name: "Title"
+    name: "title"
 },
 {
     type: "input",
     message: "What is the purpose of this project? Provide a detailed description.",
-    name: "Description"
+    name: "description"
 },
 {
     type: "input",
     message: "Table of Contents.",
-    name: "Table of Contents"
+    name: "table of Contents"
 },
 {
     type: "input",
     message: "What will the user need to install to run this app?",
-    name: "Installation"
+    name: "installation"
 },
 {
     type: "input",
     message: "How is the application used? Provide detailed instructions.",
-    name: "Usage"
+    name: "usage"
 },
 {
     type: "input",
     message: "Who contributed to this project?",
-    name: "Contributing"
+    name: "contributors"
 },
 {
     type: "input",
     message: "What commands would a user run to test this app?",
-    name: "Test"
+    name: "test"
 },
 {
     type: "list",
     message: "Which licence is being used?",
-    name: "License",
+    name: "license",
     choices: ['MIT License', 'Mozilla Public License 2.0', 'Apache License 2.0', 'Boost Software License 1.0']
 },
 {
     type: "input",
     message: "What is your Github username?",
-    name: "Username"
+    name: "username"
 },
 {
     type: "input",
     message: "What is your email address?",
-    name: "Email"
-},
-{
-    type: "input",
-    message: "Contact info for inquires?",
-    name: "Questions",
+    name: "email"
 },];
 
 // Function to write README file
@@ -81,13 +76,13 @@ async function init() {
     try {
 
     // Prompt Inquirer questions
-    const userResponses = await inquirer.prompt(questions);
-    console.log("Your responses: ", userResponses);
-    console.log("Thank you for your responses! Fetching your GitHub data next...");
+    const data = await inquirer.prompt(questions);
+    console.log("Your responses: ", data);
+    console.log("Thank you for your responses!");
 
-    // Pass Inquirer userResponses and GitHub userInfo to generateMarkdown
+    // Pass Inquirer data to generateMarkdown
     console.log("Generating your README next...")
-    const markdown = generateMarkdown(userResponses);
+    const markdown = generateMarkdown(data);
     console.log(markdown);
 
     // Write markdown to file

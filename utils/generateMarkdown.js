@@ -1,8 +1,7 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {
-  function renderLicenseBadge(license) {
-    let licenseBadge = license.license;
+function renderLicenseBadge(data) {
+    let licenseBadge = data.license;
     let yourLicense = '';
     if(licenseBadge === 'MIT') {
       yourLicense = `![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)`
@@ -13,15 +12,15 @@ function renderLicenseBadge(license) {
     } else if (licenseBadge === 'Boost Software License 1.0') {
     yourLicense = `![License: Boost Software License 1.0](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)`
     }else {
-      license.license = "N/A"
+      yourLicense = '';
     }
     return yourLicense;
   };
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {
-  let licenseLink = data.license[0];
+function renderLicenseLink(data) {
+  let licenseLink = data.license;
   let yourLink = '';
   if(licenseLink === 'MIT') {
     yourLink = `<a href = "https://opensource.org/licenses/MIT">License Link</a>`
@@ -39,8 +38,8 @@ function renderLicenseLink(license) {
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {
-    let licenseSection = data.license[0];
+function renderLicenseSection(data) {
+    let licenseSection = data.license;
     let yourSection = ''
     if(licenseSection === 'MIT') {
       yourSection = `<a href = "https://gist.github.com/ckib16/8732561535ed766cd6b8">MIT Guide</a>`
@@ -55,112 +54,41 @@ function renderLicenseSection(license) {
       yourSection = `<a href = "https://www.boost.org/users/license.html">Boost Guide</a>`
   
     } else {
-      yourSection = 'N/A'
+      yourSection = '';
     }
     return yourSection;
   }
-}
 
 // TODO: Create a function to generate markdown for README
-function generateMarkdown(userResponses) {
-
-  // Generate Table of Contents conditionally based on userResponses
-let tocGuide = `## Table of Contents`;
-
-  if (userResponses.installation !== '') { tocGuide += `
-  * [Installation](#installation)` };
- 
-  if (userResponses.usage !== '') { tocGuide += `
-  * [Usage](#usage)` };
- 
-  if (userResponses.contributing !== '') { tocGuide += `
-  * [Contributing](#contributing)` };
- 
-  if (userResponses.tests !== '') { tocGuide += `
-  * [Tests](#tests)` };
-}
-
-let draftMarkdown = 
-  `# ${userResponses.title}
-  
-  ## Description 
-  
-  ${userResponses.description}
-  `
-
-  // Add Table of Contents to markdown
-  draftMarkdown += tocGuide;
- 
-  // Add License section since License is required to Table of Contents
-  draftMarkdown += `
-  * [License](#license)`;
-  
-
-  // Optional Installation section
-  if (userResponses.installation !== '') {
-  
-  draftMarkdown +=
-  `
-  
-  ## Installation
-  
-  *Application you will need to install:*
-  
-  ${userResponses.installation}`
-  };
-  
-
-  // Optional Usage section
-  if (userResponses.usage !== '') {
-  
-  draftMarkdown +=
-  
-  `
-  
-  ## Usage 
-  
-  *Instructions and examples for use:*
-  
-  ${userResponses.usage}`
-  };
-  
-  
-  // Optional Contributing section
-  if (userResponses.contributing !== '') {
-
-  draftMarkdown +=
-    
-  `
-  
-  ## Contributing
-  
-  *Contributors to this project:*
-  
-  ${userResponses.contributing}`
-  };
-  
-
-  // Optional Tests section
-  if (userResponses.tests !== '') {
-  
-  draftMarkdown +=
-  `
-  
-  ## Tests
-  
-  *Commands you would run to test this app:*
-  
-  ${userResponses.tests}`
-  };
-
-
-  // License section is required
-  draftMarkdown +=
-  `
-  
-  ## License
-  
-  ${userResponses.license}
+function generateMarkdown(data) {
+  return `# ${data.title}
+  ## Badge: ${renderLicenseBadge(data)}
+  ## Table of Contents:
+    1. [Description](#description)
+    2. [Installation](#installation)
+    3. [Usage](#usage)
+    4. [License](#license)
+    5. [Contributors](#contributors)
+    6. [Test](#test)
+    7. [Questions](#questions)
+  ## Description:
+  ${data.description}
+  ## Installation:
+  ${data.installation}
+  ## Usage:
+  ${data.usage}
+  ## Licenses:
+  1. Your Badge: ${renderLicenseBadge(data)}
+  2. Your Badge link: ${renderLicenseLink(data)}
+  3. Your Badge Readme: ${renderLicenseSection(data)}
+  ## Contributors:
+  ${data.contributors}
+  ## Test:
+  ${data.test}
+  ## Questions:
+  1. Please click the link for Github: <a href = "https://github.com/${data.username}">My Github Profile</a>
+  2. Email: ${data.email} 
   `;
-
+  }
+  
 module.exports = generateMarkdown;
