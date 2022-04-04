@@ -45,7 +45,7 @@ const questions = [{
     type: "list",
     message: "Which licence is being used?",
     name: "License",
-    choices: ['MIT License', 'Mozilla Public License 2.0', 'Apache License 2.0', 'Boost Software License 1.0', 'None']
+    choices: ['MIT License', 'Mozilla Public License 2.0', 'Apache License 2.0', 'Boost Software License 1.0']
 },
 {
     type: "input",
