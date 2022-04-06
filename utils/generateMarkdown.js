@@ -1,4 +1,4 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
+// Function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(data) {
     let licenseBadge = data.license;
@@ -17,49 +17,45 @@ function renderLicenseBadge(data) {
     return yourLicense;
   };
 
-// TODO: Create a function that returns the license link
+// Function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(data) {
-  let licenseLink = data.license;
-  let yourLink = '';
-  if(licenseLink === 'MIT') {
-    yourLink = `<a href = "https://opensource.org/licenses/MIT">License Link</a>`
-  } else if (licenseLink === 'Mozilla Public License 2.0') {
-    yourLink = `<a href = "https://opensource.org/licenses/MPL-2.0">License Link</a>`
-  } else if (licenseLink === 'Apache License 2.0') {
-    yourLink = `<a href = "https://opensource.org/licenses/Apache-2.0">License Link</a>`
-  } else if(licenseLink === 'Boost Software License 1.0') {
-    yourLink = `<a href = "https://www.boost.org/LICENSE_1_0.txt">License Link</a>`
-  } else {
-    yourLink = '';
-  }
+    let licenseLink = data.license;
+    let yourLink = '';
+    if(licenseLink === 'MIT') {
+      yourLink = `<a href = "https://opensource.org/licenses/MIT">MIT Link</a>`
+    } else if (licenseLink === 'Mozilla Public License 2.0') {
+      yourLink = `<a href = "https://opensource.org/licenses/MPL-2.0">Mozilla Link</a>`
+    } else if (licenseLink === 'Apache License 2.0') {
+      yourLink = `<a href = "https://opensource.org/licenses/Apache-2.0">Apache Link</a>`
+    } else if(licenseLink === 'Boost Software License 1.0') {
+      yourLink = `<a href = "https://www.boost.org/LICENSE_1_0.txt">Boost Link</a>`
+    } else {
+      yourLink = '';
+    }
   return yourLink;
 }
 
-// TODO: Create a function that returns the license section of README
+// Function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(data) {
     let licenseSection = data.license;
     let yourSection = ''
     if(licenseSection === 'MIT') {
       yourSection = `<a href = "https://gist.github.com/ckib16/8732561535ed766cd6b8">MIT Guide</a>`
-  
     } else if(licenseSection === 'Mozilla Public License 2.0') {
       yourSection = `<a href = "https://www.mozilla.org/en-US/MPL/2.0/">Mozilla Guide</a>`
-  
     } else if(licenseSection === 'Apache License 2.0') {
       yourSection = `<a href = "https://github.com/Medium/opensource/blob/master/apache-license-2.0.md">Apache Guide</a>`
-  
     }else if(licenseSection === 'Boost Software License 1.0') {
       yourSection = `<a href = "https://www.boost.org/users/license.html">Boost Guide</a>`
-  
     } else {
       yourSection = '';
     }
     return yourSection;
   }
 
-// TODO: Create a function to generate markdown for README
+// Function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
   ## Badge: ${renderLicenseBadge(data)}

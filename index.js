@@ -18,11 +18,6 @@ const questions = [{
 },
 {
     type: "input",
-    message: "Table of Contents.",
-    name: "table of Contents"
-},
-{
-    type: "input",
     message: "What will the user need to install to run this app?",
     name: "installation"
 },
@@ -45,7 +40,7 @@ const questions = [{
     type: "list",
     message: "Which licence is being used?",
     name: "license",
-    choices: ['MIT License', 'Mozilla Public License 2.0', 'Apache License 2.0', 'Boost Software License 1.0']
+    choices: ['MIT', 'Mozilla Public License 2.0', 'Apache License 2.0', 'Boost Software License 1.0']
 },
 {
     type: "input",

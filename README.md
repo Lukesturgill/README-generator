@@ -1,28 +1,28 @@
-# readme generator
-  ## Badge: 
+# README Generator
+  ## Badge: ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
   ## Table of Contents:
     1. [Description](#description)
     2. [Installation](#installation)
     3. [Usage](#usage)
     4. [License](#license)
-    5. [Contributing](#contributing)
+    5. [Contributors](#contributors)
     6. [Test](#test)
     7. [Questions](#questions)
   ## Description:
-  create readme
+  Create a professional Markdown file using CLI.
   ## Installation:
-  node
+  node and the inquirer package
   ## Usage:
-  answer questions
+  Answer CLI promts to generate your README file
   ## Licenses:
-  1. Your Badge: 
-  2. Your Badge link: 
-  3. Your Badge Readme: 
-  ## Contributing:
-  luke s
+  1. Your Badge: ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+  2. Your Badge link: <a href = "https://opensource.org/licenses/MIT">License Link</a>
+  3. Your Badge Readme: <a href = "https://gist.github.com/ckib16/8732561535ed766cd6b8">MIT Guide</a>
+  ## Contributors:
+  Luke Sturgill
   ## Test:
-  node index .js
+  node index.js
   ## Questions:
-  1. Please click the link for Github: <a href = "https://github.com/lukesturgill">My Github Site</a>
-  2. Email: lukesturgill@gmail.com 
+  1. Please click the link for Github: <a href = "https://github.com/lukesturgill">My Github Profile</a>
+  2. Email: lukesturgill@gmaail.com 
   
