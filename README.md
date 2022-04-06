@@ -11,7 +11,7 @@
     6. [Test] (#test)
     7. [Questions] (#questions)
 
-  ## Description: <a name="description"></a>
+  ##  <a name="description">Description:</a>
   Create a professional README.md using CLI.
   
   ## Installation: <a name="installation"></a>
