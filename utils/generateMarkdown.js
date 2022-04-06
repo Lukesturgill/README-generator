@@ -61,39 +61,39 @@ function generateMarkdown(data) {
   
   ## Badge: ${renderLicenseBadge(data)}
   
-  ## Table of Contents:
-    1. [Description](##description)
-    2. [Installation](##installation)
-    3. [Usage](##usage)
-    4. [License](##license)
-    5. [Contributors](##contributors)
-    6. [Test](##test)
-    7. [Questions](##questions)
+  # Table of Contents:
+    1. [Description](#description)
+    2. [Installation](#installation)
+    3. [Usage](#usage)
+    4. [License](#license)
+    5. [Contributors](#contributors)
+    6. [Test](#test)
+    7. [Questions](#questions)
 
-  ## Description:
+  ## Description: <a name="description"></a>
   ${data.description}
   
-  ## Installation:
-  *How to install this application:
+  ## Installation: <a name="installation"></a>
+  * How to install this application:
   ${data.installation}
   
-  ## Usage: 
-  *Programs you'll want to install in order to run this application:
+  ## Usage: <a name="usage"></a>
+  * Programs you'll want to install in order to run this application:
   ${data.usage}
   
-  ## Licenses:
+  ## Licenses: <a name="license"></a>
   * License Badge: ${renderLicenseBadge(data)}
   * License Link: ${renderLicenseLink(data)}
   * License Guide: ${renderLicenseSection(data)}
   
-  ## Contributors:
+  ## Contributors: <a name="contributors"></a>
   ${data.contributors}
   
-  ## Test:
-  *How to test this application:
+  ## Test: <a name="test"></a>
+  * How to test this application:
   ${data.test}
   
-  ## Questions:
+  ## Questions: <a name="questions"></a>
   Please contact me at my email address with any questions!
   1. My Github: <a href = "https://github.com/${data.username}">Github</a>
   2. Email: ${data.email} 
