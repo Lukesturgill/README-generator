@@ -3,18 +3,18 @@
   ## Badge: ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
   
   # Table of Contents:
-    1. [Description] (#description)
-    2. [Installation] (#installation)
-    3. [Usage] (#usage)
-    4. [License] (#license)
-    5. [Contributors] (#contributors)
-    6. [Test] (#test)
-    7. [Questions] (#questions)
+    1. [Description](#description)
+    2. [Installation](#installation)
+    3. [Usage](#usage)
+    4. [License](#license)
+    5. [Contributors](#contributors)
+    6. [Test](#test)
+    7. [Questions](#questions)
 
-  ##  <a name="description">Description:</a>
+  ## Description:<a name=description></a>
   Create a professional README.md using CLI.
   
-  ## Installation: <a name="installation"></a>
+  ## Installation: <a name=installation></a>
   * How to install this application:
   Node.js and the Inquirer package
   
