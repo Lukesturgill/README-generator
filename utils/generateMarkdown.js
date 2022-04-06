@@ -58,31 +58,44 @@ function renderLicenseSection(data) {
 // Function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
+  
   ## Badge: ${renderLicenseBadge(data)}
+  
   ## Table of Contents:
-    1. [Description](#description)
-    2. [Installation](#installation)
-    3. [Usage](#usage)
-    4. [License](#license)
-    5. [Contributors](#contributors)
-    6. [Test](#test)
-    7. [Questions](#questions)
+    1. [Description](##description)
+    2. [Installation](##installation)
+    3. [Usage](##usage)
+    4. [License](##license)
+    5. [Contributors](##contributors)
+    6. [Test](##test)
+    7. [Questions](##questions)
+
   ## Description:
   ${data.description}
+  
   ## Installation:
+  *How to install this application:
   ${data.installation}
-  ## Usage:
+  
+  ## Usage: 
+  *Programs you'll want to install in order to run this application:
   ${data.usage}
+  
   ## Licenses:
-  1. Your Badge: ${renderLicenseBadge(data)}
-  2. Your Badge link: ${renderLicenseLink(data)}
-  3. Your Badge Readme: ${renderLicenseSection(data)}
+  * License Badge: ${renderLicenseBadge(data)}
+  * License Link: ${renderLicenseLink(data)}
+  * License Page: ${renderLicenseSection(data)}
+  
   ## Contributors:
   ${data.contributors}
+  
   ## Test:
+  *How to test this application:
   ${data.test}
+  
   ## Questions:
-  1. Please click the link for Github: <a href = "https://github.com/${data.username}">My Github Profile</a>
+  Please contact me at my email address with any questions!
+  1. My Github: <a href = "https://github.com/${data.username}">" "</a>
   2. Email: ${data.email} 
   `;
   }
